@@ -1,10 +1,15 @@
 const products = require("./products")
 
 const dataRed = [10, 20, 30, 40, 50];
-const reducer = (previousValue, currentValue) => previousValue + currentValue;
+const reducer = (previousValue, currentValue) => {
+    return previousValue + currentValue};
 const reduceResult = dataRed.reduce(reducer);
 // dla pierwszego obiegu,ze nie mamy zdefiniowanego previousValue,
-// to bierze pierwszy element + drugi element. W nastepnym kroku sume wcxzesniejsza plus nastepny
+// to bierze pierwszy element + drugi element. W nastepnym kroku sume wcxzesniejsza plus nastepny.
+// previousValue :: 10 currentValue ::20
+// previousValue :: 30 currentValue ::30
+// previousValue :: 60 currentValue ::40
+// previousValue :: 100 currentValue ::50
 console.log(reduceResult);
 
 //druga czesc. Zdestrukturolizowalismy obiekt

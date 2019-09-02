@@ -13,10 +13,15 @@ console.log('resultCompose2: ' + resultCompose2);
 
 //Za pomoca operatora reduce
 
-const compose = (...functions) => args => functions.reduceRight((arg, fn) => fn(arg), args);
-
-const reduceCompost = (...fns) => fns.reduce(
-    (f,g) => (...args) => f(g(...args))
+const reduceCompose = (...fns) => fns.reduce(
+    (f,g) => (...args) => (f(g(...args)))
 );
 
-console.log('Cudo na patyku ::' + reduceCompost(increment, decrement, double, double)(2));
+console.log('Compose ::' + reduceCompose(increment, double)(2));
+
+
+const reducePipe = (...fns) => fns.reduce(
+    (f,g) => (...args) => (g(f(...fns)))
+);
+
+console.log('Pipe ::' + reducePipe(increment, double,)(2));
