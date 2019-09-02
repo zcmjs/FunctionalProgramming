@@ -12,9 +12,17 @@ const product = {
 
 // !!! PONIZSZY ZAPIS JEST ROWNY POWYZSZEMU ZAPISOWI
 const {name, price, category} = product;
-console.log(name);
+console.log(name, price, category);
 
 // jesli pola i wartosci obiektu maja taka sama nazwe, to mozna uzyc sktroconego zapisu
 const short = {name, price};
 console.log(short);
+
+//Wysłanie do funkcji obiektu, a odebranie 2 danych
+const testDest = ({price, name}) => {
+    // const {name, price} = product;
+    console.log(`${name} kosztuje ${name}`);
+};
+
+testDest(product);
 
